@@ -42,7 +42,10 @@ export const sendCartData = (cart) => {
     const sendRequest = async () => {
       const response = await fetch("urlGoesHere...", {
         method: "PUT",
-        body: JSON.stringify(cart),
+        body: JSON.stringify({
+          items: cart.items,
+          totalQuanitity: cart.totalQuanitity,
+        }),
         headers: {
           "Content-Type": "application/json",
         },
